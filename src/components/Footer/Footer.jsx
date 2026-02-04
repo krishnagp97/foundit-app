@@ -11,10 +11,11 @@ function Footer() {
           Please verify ownership before handing over items.
         </p>
 
-        <div className="flex flex-wrap gap-y-10">
- 
-          <div className="w-full md:w-1/2 lg:w-5/12">
-            <div className="flex flex-col h-full justify-between">
+        <div className="flex flex-col lg:flex-row items-start gap-10">
+
+          
+          <div className="flex flex-col justify-between lg:w-7/12">
+            <div>
               <div className="flex items-center mb-4">
                 <Logo width="50px" />
                 <span className="ml-2 text-xl font-semibold text-gray-800">FoundIt</span>
@@ -22,17 +23,19 @@ function Footer() {
               <p className="text-sm text-gray-600 max-w-sm">
                 Helping lost items find their way back through a trusted community.
               </p>
-              <p className="text-sm text-gray-500 mt-6">
-                © 2026 FoundIt. All rights reserved.
-              </p>
             </div>
+
+            <p className="text-sm text-gray-500 mt-6">
+              © 2026 FoundIt. All rights reserved.
+            </p>
           </div>
 
-          <div className="w-full md:w-1/2 lg:w-2/12">
+          <div className="lg:w-3/12">
             <h3 className="mb-5 text-xs font-semibold uppercase tracking-wide text-gray-700">
               Quick Links
             </h3>
-            <ul className="space-y-3">
+
+            <ul className="flex flex-col gap-3">
               <li>
                 <Link className="text-gray-800 hover:text-blue-700 transition" to="/">
                   Home
@@ -49,14 +52,6 @@ function Footer() {
                 </Link>
               </li>
             </ul>
-          </div>
-          <div className="w-full md:w-1/2 lg:w-2/12">
-                <a
-                  href="mailto:support@foundit.com"
-                  className="hover:text-blue-700 transition"
-                >
-                  Support/Feedback
-                </a>
           </div>
 
         </div>
