@@ -1,9 +1,13 @@
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import { useEffect } from 'react';
 
 function Home() {
     const authStatus = useSelector((state)=> state.auth.status)
     const navigate = useNavigate();
+    useEffect(()=>{
+        document.title = "Foundit"
+    },[])
 
     
     

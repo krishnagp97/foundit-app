@@ -8,6 +8,11 @@ function AllPost() {
     const [posts,setPosts] = useState([])
     const [loading,setLoading] = useState(true)
 
+    useEffect(()=>{
+        document.title = "Foundit | AllPost"
+    
+      },[])
+
     useEffect(() => {
         const fetchPosts = async () => {
             if (!searchTerm || !searchTerm.trim()) {

@@ -7,6 +7,10 @@ export default function EditPost() {
     const {slug} = useParams()
     const navigate = useNavigate()
     useEffect(()=>{
+        document.title = "Foundit | EditPost"
+    
+      },[])
+    useEffect(()=>{
         if(slug){
             appwriteService.getPost(slug).then((post)=>{
                 if(post){
