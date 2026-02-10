@@ -72,37 +72,55 @@ export default function PostForm({ post }) {
     }, [watch, slugTransform, setValue]);
 
     return (
-        <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
-            <div className="w-2/3 px-2">
-                <Input
-                    label="Title :"
-                    placeholder="Title"
-                    className="mb-4"
-                    {...register("title", { required: true })}
-                />
-                <RTE label="Content :" name="content" control={control} defaultValue={getValues("content")} />
-            </div>
-            <div className="w-1/3 px-2">
-                <Input
-                    label="Image :"
-                    type="file"
-                    className="mb-4"
-                    accept="image/png, image/jpg, image/jpeg, image/gif"
-                    {...register("image", { required: !post })}
-                />
-                {post && (
-                    <div className="w-full mb-4">
-                        <img
-                            src={appwriteService.getFileView(post.featuredImage)}
-                            alt={post.title}
-                            className="rounded-lg"
-                        />
-                    </div>
-                )}
-                <Button type="submit" bgColor={post ? "bg-green-500" : undefined} className="w-full">
-                    {post ? "Update" : "Submit"}
-                </Button>
-            </div>
-        </form>
+        <form onSubmit={handleSubmit(submit)} className="flex flex-col lg:flex-row gap-4">
+
+ 
+  <div className="w-full lg:w-2/3 px-1">
+    <Input
+      label="Title :"
+      placeholder="Title"
+      className="mb-4"
+      {...register("title", { required: true })}
+    />
+
+    <RTE
+      label="Content :"
+      name="content"
+      control={control}
+      defaultValue={getValues("content")}
+    />
+  </div>
+
+ 
+  <div className="w-full lg:w-1/3 px-1">
+    <Input
+      label="Image :"
+      type="file"
+      className="mb-4"
+      accept="image/png, image/jpg, image/jpeg, image/gif"
+      {...register("image", { required: !post })}
+    />
+
+    {post && (
+      <div className="w-full mb-4">
+        <img
+          src={appwriteService.getFileView(post.featuredImage)}
+          alt={post.title}
+          className="rounded-lg w-full object-cover max-h-64"
+        />
+      </div>
+    )}
+
+    <Button
+      type="submit"
+      bgColor={post ? "bg-green-500" : undefined}
+      className="w-full mt-2"
+    >
+      {post ? "Update" : "Submit"}
+    </Button>
+  </div>
+
+</form>
+
     );
 }

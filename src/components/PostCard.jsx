@@ -7,27 +7,53 @@ function PostCard({ post }) {
     day: "2-digit",
     month: "short",
     year: "numeric",
-  });
+  })
 
   return (
     <Link to={`/post/${post.$id}`}>
-      <div className='w-full bg-gray-100 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow duration-200'>
+      <div className="
+        w-full 
+        bg-gray-100 
+        rounded-xl 
+        p-3 sm:p-4 
+        shadow-sm 
+        hover:shadow-md 
+        transition-shadow 
+        duration-200
+      ">
 
-        <div className='w-full h-48 mb-4 overflow-hidden rounded-xl'>
+        
+        <div className="
+          w-full 
+          h-40 sm:h-48 md:h-56 
+          mb-3 sm:mb-4 
+          overflow-hidden 
+          rounded-xl
+        ">
           <img
             src={appwriteService.getFileView(post.featuredImage)}
             alt={post.title}
-            className='w-full h-full object-cover'
+            className="w-full h-full object-cover"
           />
         </div>
 
-
-        <div className='flex justify-between items-center'>
-          <h2 className='text-xl font-bold'>{post.title}</h2>
+        
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
+          <h2 className="
+            text-base sm:text-lg md:text-xl 
+            font-bold 
+            line-clamp-2
+          ">
+            {post.title}
+          </h2>
 
           <time
-            className='text-xs text-gray-500'
-            dateTime={post.$createdAt} 
+            className="
+              text-[10px] sm:text-xs 
+              text-gray-500 
+              whitespace-nowrap
+            "
+            dateTime={post.$createdAt}
           >
             {formattedDate}
           </time>

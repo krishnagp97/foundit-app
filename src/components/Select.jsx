@@ -28,5 +28,5 @@ function Select({
     </div>
   )
 }
-// React.forwardRef is used so that the parent component can directly access the DOM element
+
 export default React.forwardRef(Select)
