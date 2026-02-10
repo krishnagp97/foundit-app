@@ -15,6 +15,15 @@ export class Service{
     }
 
     async createPost({title, slug, content, featuredImage, status, userId}){
+        if (typeof content !== "string") {
+            alert("Content must be a string");
+            return;
+        }
+
+        if (content.length > 255) {
+            alert("Content must be under 255 characters");
+            return;
+        }
         try {
             return await this.databases.createDocument(
                 conf.appwriteDatabaseId,

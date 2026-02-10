@@ -6,12 +6,16 @@ import { useNavigate } from 'react-router-dom'
 import {useDispatch} from 'react-redux'
 import {useForm} from 'react-hook-form'
 import authService from '../appwrite/auth'
+import { useEffect } from 'react'
 
 function Login() {
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const {register,handleSubmit} = useForm()
     const [error,setError] = useState()
+    useEffect(()=>{
+      document.title = "Foundit | Login"  
+    },[])
 
     const login = async(data) =>{
         setError("")
