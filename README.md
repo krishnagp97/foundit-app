@@ -1,12 +1,100 @@
-# React + Vite
+#  FoundIt — Lost & Found Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ **Live Demo:** https://foundit-app-ten.vercel.app/
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📌 Overview
+**FoundIt** is a full-stack web application that helps users report, search, and recover lost items through a community-driven platform. Users can create posts for lost or found items, upload images, search listings.
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## 🚀 Features
+
+- 🔐 User Authentication (Signup / Login / Logout)
+- 📝 Create, Edit, Delete Posts (CRUD)
+- 🔎 Search items by title
+- 🖼 Image upload with preview
+- 📱 Fully responsive UI
+
+
+
+## 🛠 Tech Stack
+
+### Frontend
+- React.js
+- Tailwind CSS
+- Redux Toolkit
+
+### Backend / Services
+- Appwrite
+  - Authentication
+  - Database
+  - Storage
+
+### Tools & Deployment
+- Git & GitHub
+- Vite
+- VS Code
+- Vercel (Hosting)
+
+
+## 📂 Project Structure
+
+```bash
+src/
+ ┣ components/
+ ┣ pages/
+ ┣ store/
+ ┣ appwrite/
+ ┗ App.jsx
+```
+
+
+
+## ⚙️ Installation & Setup
+
+Install dependencies
+```bash
+npm install
+```
+
+Run development server
+```bash
+npm run dev
+```
+
+## 🔐 Environment Variables
+
+Create `.env` file:
+
+```
+VITE_APPWRITE_URL=your_url
+VITE_APPWRITE_PROJECT_ID=your_project_id
+VITE_APPWRITE_DATABASE_ID=your_db_id
+VITE_APPWRITE_COLLECTION_ID=your_collection_id
+VITE_APPWRITE_BUCKET_ID=your_bucket_id
+```
+
+
+
+## 📸 Screenshots
+![Home Page](./screenshots/Home.png)
+![AllPosts Page](./screenshots/AllPosts.png)
+![AddPost Page](./screenshots/AddPost.png)
+![Login Page](./screenshots/Login.png)
+
+
+
+
+## 📈 Learning Outcomes
+- Built full-stack application using real backend service  
+- Implemented authentication securely  
+- Managed global state using Redux  
+- Handled file uploads & storage  
+- Structured scalable React project  
+- Deployed production-ready app  
+
+
+## 👨‍💻 Author
+**Krishna Gopal**
+
